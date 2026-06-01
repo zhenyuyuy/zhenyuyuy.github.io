@@ -9,3 +9,115 @@
       hello world
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💡 今日清醒金句產生器 💡</title>
+<style>
+body {
+font-family: 'Microsoft JhengHei', sans-serif;
+background-color: #2b2b2b;
+color: #ffffff;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+transition: background-color 0.5s ease;
+}
+.vending-machine {
+text-align: center;
+background-color: #1e1e1e;
+padding: 40px;
+border-radius: 20px;
+border: 3px solid #f39c12;
+box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+max-width: 450px;
+width: 90%;
+}
+h1 {
+color: #f39c12;
+font-size: 2rem;
+margin-bottom: 10px;
+}
+.subtitle {
+color: #bdc3c7;
+font-size: 0.9rem;
+margin-bottom: 30px;
+}
+.screen {
+background-color: #2c3e50;
+border-radius: 10px;
+padding: 30px 20px;
+font-size: 1.3rem;
+min-height: 80px;
+display: flex;
+justify-content: center;
+align-items: center;
+line-height: 1.6;
+border-left: 5px solid #f39c12;
+margin-bottom: 30px;
+}
+button {
+background-color: #f39c12;
+color: white;
+border: none;
+padding: 15px 40px;
+font-size: 1.2rem;
+font-weight: bold;
+border-radius: 50px;
+cursor: pointer;
+box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+transition: all 0.2s;
+}
+button:hover {
+background-color: #f1c40f;
+transform: translateY(-2px);
+}
+button:active {
+transform: translateY(2px);
+}
+</style>
+</head>
+<body>
+
+<div class="vending-machine">
+<h1>💡 今日清醒金句產生器 💡</h1>
+<div class="subtitle">寫作業寫到懷疑人生？點擊按鈕獲取力量（或打擊）</div>
+
+<div class="screen" id="quote-display">點擊下方按鈕，看看命運要對你說什麼...</div>
+
+<button onclick="getQuote()">獲取今日金句</button>
+</div>
+
+<script>
+//  10 句幽默金句
+const quotes = [
+"萬事開頭難，中間難，結尾更難。",
+"只要我沒有道德，就沒有人能綁架我。",
+"遇到困難不要退縮，睡一覺起來，你會發現困難還在那裡。",
+"不要被眼前的困難打敗，因為後面還有更多的困難。",
+"我不是在摸魚，我是在幫公司測試網路穩定度。",
+"別人都在努力，那你努力還有什麼用？",
+"只要你肯吃苦，就會有吃不完的苦。",
+"就算你是一坨屎，也會遇到一隻不嫌棄你的屎殼郎。但這並不值得高興。",
+"有錢人終成眷屬，沒錢人親眼目睹。",
+"今日事今日畢，如果沒畢，明天再說。"
+];
+
+// 6 種不同的背景顏色
+const colors = ["#2b2b2b", "#1e272e", "#2c3e50", "#1B1464", "#211a23", "#4c1a2e"];
+
+function getQuote() {
+const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+document.getElementById("quote-display").innerText = quotes[randomQuoteIndex];
+
+const randomColorIndex = Math.floor(Math.random() * colors.length);
+document.body.style.backgroundColor = colors[randomColorIndex];
+}
+</script>
+
+</body>
+</html>
